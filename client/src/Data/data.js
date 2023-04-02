@@ -28,11 +28,11 @@ export const adminMenu =[
         icon:"fa-solid fa-house-chimney",
     },
     {name:"Doctors",
-    path:"/doctors",
+    path:"/admin/Doctors",
     icon:"fa-solid fa-user-doctor"},
     {
         name:"Users",
-        path:"/users",
+        path:"/admin/Users",
         icon:"fa-regular fa-user"
     },
     {
