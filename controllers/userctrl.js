@@ -91,7 +91,7 @@ const applyDoctorController = async (req, res) => {
       data: {
         doctorId: newDoctor._id,
         name: newDoctor.firstName + " " + newDoctor.lastName,
-        onClickPath: "/admin/docotrs",
+        onClickPath: "/admin/doctors",
       },
     });
     await userModel.findByIdAndUpdate(adminUser._id, { notifcation });
@@ -135,36 +135,45 @@ const getAllNotificationController = async (req, res) => {
 };
 //delete notification
 
-
-const deleteAllNotificationController= async(req,res)=>{
-  try{
-
-    const user = await userModel.findOne({_id:req.body.userId});
-    user.notifcation=[];
-    user.seennotification=[];
-    const updatedUser= await user.save();
-    updatedUser.password=undefined;
+const deleteAllNotificationController = async (req, res) => {
+  try {
+    const user = await userModel.findOne({ _id: req.body.userId });
+    user.notifcation = [];
+    user.seennotification = [];
+    const updatedUser = await user.save();
+    updatedUser.password = undefined;
     res.status(200).send({
-      success:true,
-      message:'Notification deleted',
+      success: true,
+      message: "Notification deleted",
       data: updatedUser,
     });
-
-  }  catch(error){
+  } catch (error) {
     console.log(error);
     res.status(500).send({
-      success:false,
-      message:'unable to delete all notification',
-      error
-    })
+      success: false,
+      message: "unable to delete all notification",
+      error,
+    });
   }
-
-
-
-}
-
-
-
+};
+//GET ALL DOC
+const getAllDoctorsControllers = async (req, res) => {
+  try {
+    const doctors = await doctorModel.find({ status: "approved" });
+    res.status(200).send({
+      success: true,
+      message: "Doctors Lists Fetched Successfully",
+      data: doctors,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      error,
+      message: "Error while Fetching Doctor!",
+    });
+  }
+};
 
 module.exports = {
   loginController,
@@ -172,5 +181,6 @@ module.exports = {
   authController,
   applyDoctorController,
   getAllNotificationController,
-  deleteAllNotificationController
+  deleteAllNotificationController,
+  getAllDoctorsControllers,
 };

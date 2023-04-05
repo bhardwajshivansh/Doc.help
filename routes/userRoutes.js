@@ -31,6 +31,7 @@ router.post("/get-all-notification", authMiddleware, getAllNotificationControlle
 router.post("/delete-all-notification", authMiddleware, deleteAllNotificationController);
 
 
-
+//GET ALL DOC
+router.get('/getAllDoctors', authMiddleware, getAllDoctorsControllers)
 
 module.exports = router;
