@@ -63,8 +63,27 @@ const changeAccountStatusController = async (req, res) => {
     });
   }
 };
+//GET SINGLE DOC
+const getDoctorByIdController = async (req, res) => {
+  try {
+    const doctor = await doctorModel.findOne({ _id: req.body.doctorId });
+    res.status(200).send({
+      success: true,
+      message: "Single Doc Info Fetched",
+      data: doctor,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      error,
+      message: "Error in Single Doctor Info",
+    });
+  }
+};
 module.exports = {
   getAllDoctorsController,
   getAllUsersController,
   changeAccountStatusController,
+  getDoctorByIdController,
 };
