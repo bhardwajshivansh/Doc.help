@@ -1,4 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+//react-router-dom is used for making routes based design 
+
+
+
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -13,6 +17,7 @@ import Doctors from "./admin/Doctor";
 import Profile from "./pages/doctor/Profile";
 import BookingPage from "./pages/BookingPage";
 import Appointments from "./pages/Appointments";
+
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (

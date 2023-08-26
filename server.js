@@ -13,8 +13,8 @@ connectDB();
 const app=express();
 
 //middlewares
-app.use(express.json());
-app.use(moragan('dev'));
+app.use(express.json());//for parsing any object passed
+app.use(moragan('dev'));//for route finish time 
 
 //routes
 app.use('/api/v1/user', require("./routes/userRoutes"));

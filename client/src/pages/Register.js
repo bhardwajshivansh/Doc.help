@@ -28,8 +28,9 @@ const Register = () => {
   };
   return (
     <div className="form-container">
-      <Form layout="vertical" onFinish={onfinishHandler}>
-        <h1>Register Form</h1>
+      <Form layout="vertical" onFinish={onfinishHandler} className="card">
+        <h1 className="text-center">DOC.HELP</h1>
+        <h2 className="text-center">Register Form</h2>
         <Form.Item label="Name" name="name">
           <Input type="text" required />
         </Form.Item>
@@ -39,6 +40,7 @@ const Register = () => {
         <Form.Item label="Password" name="password">
           <Input type="password" required />
         </Form.Item>
+        <Link to="/login" className="registerlink">ALREADY A USER</Link>
         <button className="btn btn-primary" type="submit">
           Register
         </button>
