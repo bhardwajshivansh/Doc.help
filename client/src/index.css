@@ -10,8 +10,9 @@
   align-items: center;
   justify-content: center; 
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.393);
-  background-image: url(images/doctor_with_phone.png);
+  background-image: url(images/doctor_with_phone.png) ;
+  background-size: 100vh 100vh;
+
 }
 .form-btn {
   width: 250px !important;

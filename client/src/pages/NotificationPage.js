@@ -67,7 +67,7 @@ const NotificationPage = () => {
     <Layout>
       <h4 className="p-3 text-center">Notification Page</h4>
       <Tabs>
-        <Tabs.TabPane tab="unRead" key={0}>
+        <Tabs.TabPane tab="UNREAD" key={0}>
           <div className="d-flex justify-content-end">
             <h4 className="p-2" onClick={handleMarkAllRead}>
               Mark All Read
@@ -84,9 +84,9 @@ const NotificationPage = () => {
             </div>
           ))}
         </Tabs.TabPane>
-        <Tabs.TabPane tab="Read" key={1}>
+        <Tabs.TabPane tab="READ" key={1}>
           <div className="d-flex justify-content-end">
-            <h4 className="p-2 text-primary" style ={{cursor:'pointer'}}  onClick={handleDeleteAllRead}>
+            <h4 className="p-2 text-primary"  style ={{cursor:'pointer'}}  onClick={handleDeleteAllRead}>
               Delete All Read
             </h4>
           </div>

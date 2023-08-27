@@ -46,63 +46,68 @@ const ApplyDoctor = () => {
   };
   return (
     <Layout>
-      <h1 className="text-center">Apply Doctor</h1>
-      <Form layout="vertical" onFinish={handleFinish} className="m-3">
+      <h1 className="text-center layoutbg" >Apply Doctor</h1>
+      <Form layout="vertical" onFinish={handleFinish} className="m-3 layoutbg">
         <h4 className="">Personal Details : </h4>
         <Row gutter={20}>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="First Name"
               name="firstName"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your first name" />
+              <Input type="text" placeholder="First Name" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Last Name"
               name="lastName"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your last name" />
+              <Input type="text" placeholder="Last Name" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
-              label="Phone No"
+              label="Phone Number"
               name="phone"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your contact no" />
+              <Input type="text" placeholder="Conatact Number" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Email"
               name="email"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="email" placeholder="your email address" />
+              <Input type="email" placeholder="Email Address" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
-            <Form.Item label="Website" name="website">
-              <Input type="text" placeholder="your website" />
+            <Form.Item label="Website" name="website" className="layoutformitem">
+              <Input type="text" placeholder="Website" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Address"
               name="address"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your clinic address" />
+              <Input type="text" placeholder="Clinic address" />
             </Form.Item>
           </Col>
         </Row>
@@ -112,34 +117,37 @@ const ApplyDoctor = () => {
             <Form.Item
               label="Specialization"
               name="specialization"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your specialization" />
+              <Input type="text" placeholder="Specialization" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Experience"
               name="experience"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your experience" />
+              <Input type="text" placeholder="Experience" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Fees Per Cunsaltation"
               name="feesPerCunsaltation"
+              className="layoutformitem"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your contact no" />
+              <Input type="text" placeholder="Fees" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
-            <Form.Item label="Timings" name="timings" required>
+            <Form.Item label="Timings" name="timings" className="layoutformitem" required>
               <TimePicker.RangePicker format="HH:mm" />
             </Form.Item>
           </Col>

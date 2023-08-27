@@ -12,7 +12,7 @@ icon:"fa-solid fa-list-ul"
 path:"/apply-doctor",
 icon:"fa-solid fa-user-doctor"},
 {
-    name:"profile",
+    name:"Profile",
     path:"/profile",
     icon:"fa-regular fa-user"
 },
