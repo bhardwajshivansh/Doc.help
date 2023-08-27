@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
 
 
 //*************doctor menu*************/
+//schema created
 const doctorMenu =[
   {
       name:"Home",
@@ -41,12 +42,15 @@ const doctorMenu =[
 //*************doctor menu************/
   // redering menu list
 
-  
+  //here we will check what to show
   const SidebarMenu = user?.isAdmin 
   ? adminMenu 
   : user?.isDoctor
   ? doctorMenu
   : userMenu;
+
+
+
   return (
     <>
       <div className="main">

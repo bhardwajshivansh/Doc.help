@@ -21,7 +21,7 @@ h1{
     color: rgb(61, 62, 61);
 }
 .card{
-    position: fixed;
+    position: absolute;
     justify-content: center;
     background-color: rgb(223, 228, 232);
     width: 40%;

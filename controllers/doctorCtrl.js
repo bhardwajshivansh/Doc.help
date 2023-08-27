@@ -1,12 +1,14 @@
 const appointmentModel = require("../models/appointmentModel");
 const doctorModel = require("../models/doctorModel");
 const userModel = require("../models/userModels");
+
+//sening information of all doctors
 const getDoctorInfoController = async (req, res) => {
   try {
     const doctor = await doctorModel.findOne({ userId: req.body.userId });
     res.status(200).send({
       success: true,
-      message: "doctor data fetch success",
+      message: "Doctor Data Fetch Successfully ",
       data: doctor,
     });
   } catch (error) {
@@ -19,7 +21,9 @@ const getDoctorInfoController = async (req, res) => {
   }
 };
 
-// update doc profile
+
+
+//update doctor profile
 const updateProfileController = async (req, res) => {
   try {
     const doctor = await doctorModel.findOneAndUpdate(

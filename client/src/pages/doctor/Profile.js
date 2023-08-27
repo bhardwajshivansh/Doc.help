@@ -13,7 +13,11 @@ const Profile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
-  // update doc ==========
+
+
+
+  //***************************Updating the information*************************
+
   //handle form
   const handleFinish = async (values) => {
     try {
@@ -47,9 +51,9 @@ const Profile = () => {
       message.error("Somthing Went Wrrong ");
     }
   };
-  // update doc ==========
+  //*************************information updated*********************
 
-  //getDOc Details
+  //Getting Doctor Information
   const getDoctorInfo = async () => {
     try {
       const res = await axios.post(
@@ -95,6 +99,7 @@ const Profile = () => {
               <Form.Item
                 label="First Name"
                 name="firstName"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -105,6 +110,7 @@ const Profile = () => {
               <Form.Item
                 label="Last Name"
                 name="lastName"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -115,6 +121,7 @@ const Profile = () => {
               <Form.Item
                 label="Phone No"
                 name="phone"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -125,6 +132,7 @@ const Profile = () => {
               <Form.Item
                 label="Email"
                 name="email"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -132,7 +140,7 @@ const Profile = () => {
               </Form.Item>
             </Col>
             <Col xs={24} md={24} lg={8}>
-              <Form.Item label="Website" name="website">
+              <Form.Item label="Website" name="website" className="layoutformitem">
                 <Input type="text" placeholder="your website" />
               </Form.Item>
             </Col>
@@ -140,6 +148,7 @@ const Profile = () => {
               <Form.Item
                 label="Address"
                 name="address"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -153,6 +162,7 @@ const Profile = () => {
               <Form.Item
                 label="Specialization"
                 name="specialization"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -163,6 +173,7 @@ const Profile = () => {
               <Form.Item
                 label="Experience"
                 name="experience"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -173,6 +184,7 @@ const Profile = () => {
               <Form.Item
                 label="Fees Per Cunsaltation"
                 name="feesPerCunsaltation"
+                className="layoutformitem"
                 required
                 rules={[{ required: true }]}
               >
@@ -180,7 +192,7 @@ const Profile = () => {
               </Form.Item>
             </Col>
           <Col xs={24} md={24} lg={8}>
-              <Form.Item label="Timings" name="timings" required>
+              <Form.Item label="Timings" name="timings" required className="layoutformitem">
                 <TimePicker.RangePicker format="HH:mm" />
               </Form.Item>
         </Col>
