@@ -1,6 +1,21 @@
 # Doc.help
 
-Doctor Appointment System Management
+Doctor Appointment System Management:
+Doc.help is appointment system management application which provide 
+---User Functionality---
+->To book an appointment 
+->To apply to become a doctor
+->Check their appointment status
+->Check availability for a doctor
+The application gives a secure login and register functionality and is able to retrieve login information , application is dynamic and responsive.
+With easy and user friendly user interface many operations can be done with slight of clicks
+---Admin Controls----
+->Admin have rights to approve user request to become a doctor.
+->Admin can even block users and remove doctors
+---Doctor Functionality----
+->Doctor have their dynamic profile page where they can update all the information about them which is used by user.
+->Doctor can check their appointment in application
+->Doctor have functionality to approve or disapprove the requests.
 ![WhatsApp Image 2023-08-27 at 2 36 06 PM](https://github.com/janrai1/Doc.help/assets/105383317/22da164b-02e4-4f9a-b4ca-0f2db359a8a7)
 ![WhatsApp Image 2023-08-27 at 2 35 48 PM](https://github.com/janrai1/Doc.help/assets/105383317/7a6b0929-1c54-413e-834b-6d85bbb5c699)
 ![WhatsApp Image 2023-08-27 at 2 35 15 PM](https://github.com/janrai1/Doc.help/assets/105383317/809fdca4-e2c9-4f02-8096-675eb1ccb74c)
