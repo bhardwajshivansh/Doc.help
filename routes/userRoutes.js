@@ -26,15 +26,17 @@ router.post("/register", registerController);
 //Auth || POST
 router.post("/getUserData", authMiddleware, authController);
 
-//APply Doctor || POST
+//Apply To Become A Doctor || POST
 router.post("/apply-doctor", authMiddleware, applyDoctorController);
 
-//Notifiaction  Doctor || POST
+//Notifiaction That  Admin Receives || POST 
 router.post(
   "/get-all-notification",
   authMiddleware,
   getAllNotificationController
 );
+
+
 //Notifiaction  Doctor || POST
 router.post(
   "/delete-all-notification",
@@ -42,13 +44,13 @@ router.post(
   deleteAllNotificationController
 );
 
-//GET ALL DOC
+//GET ALL DOCTORS
 router.get("/getAllDoctors", authMiddleware, getAllDocotrsController);
 
 //BOOK APPOINTMENT
 router.post("/book-appointment", authMiddleware, bookeAppointmnetController);
 
-//Booking Avliability
+//Booking Availabilty
 router.post(
   "/booking-availbility",
   authMiddleware,

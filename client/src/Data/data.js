@@ -8,7 +8,7 @@ export const userMenu =[
 path: "/appointments",
 icon:"fa-solid fa-list-ul"
 },
-{name:"Apply Doctor",
+{name:"Apply To Be A Doctor",
 path:"/apply-doctor",
 icon:"fa-solid fa-user-doctor"},
 {

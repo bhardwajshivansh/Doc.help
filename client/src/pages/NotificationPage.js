@@ -1,16 +1,25 @@
 import React from "react";
 import Layout from "./../components/Layout";
-import { message, Tabs } from "antd";
+import "../styles/LayoutStyles.css";
+import { Button, message, Tabs } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
+//This handles the notification  Page
+
+
 const NotificationPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
-  //   handle read notification
+
+
+  // Functionality To move notifications from unread to read tab
+  //Basically funtionality to send request to server to delete the notification from unread array to seen array
+
   const handleMarkAllRead = async () => {
     try {
       dispatch(showLoading());
@@ -31,7 +40,7 @@ const NotificationPage = () => {
       } else {
         message.error(res.data.message);
       }
-    } catch (error) {
+    } catch (error) {//showing error
       dispatch(hideLoading());
       console.log(error);
       message.error("somthing went wrong");
@@ -39,7 +48,8 @@ const NotificationPage = () => {
   };
 
 
-  //delete notifications 
+  //Funtionality To Delete All The Notifications
+  // Basically funtionality to send request to server to delete the notification from seen array
   const handleDeleteAllRead = async () => {
     try{
       dispatch(showLoading());
@@ -51,27 +61,30 @@ const NotificationPage = () => {
       });
       dispatch(hideLoading());
       if(res.data.success){
-        message.error(res.data.message);
+        message.success(res.data.message);
       }else{
         message.error(res.data.message);
-
       }
-
     } catch(error){
       console.log(error);
       message.error('Something went wrong in notification');
     }
 
   };
+
+
+
+  //This is page you see when you click on notification icon
+
   return (
     <Layout>
       <h4 className="p-3 text-center">Notification Page</h4>
       <Tabs>
         <Tabs.TabPane tab="UNREAD" key={0}>
           <div className="d-flex justify-content-end">
-            <h4 className="p-2" onClick={handleMarkAllRead}>
+            <Button onClick={handleMarkAllRead}>
               Mark All Read
-            </h4>
+            </Button>
           </div>
           {user?.notifcation.map((notificationMgs) => (
             <div className="card" style={{ cursor: "pointer" }}>
@@ -86,9 +99,9 @@ const NotificationPage = () => {
         </Tabs.TabPane>
         <Tabs.TabPane tab="READ" key={1}>
           <div className="d-flex justify-content-end">
-            <h4 className="p-2 text-primary"  style ={{cursor:'pointer'}}  onClick={handleDeleteAllRead}>
+            <Button style ={{cursor:'pointer'}}  onClick={handleDeleteAllRead}>
               Delete All Read
-            </h4>
+            </Button>
           </div>
           {user?.seennotification.map((notificationMgs) => (
             <div className="card" style={{ cursor: "pointer" }}>

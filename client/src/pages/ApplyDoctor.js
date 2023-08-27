@@ -1,3 +1,6 @@
+//remember here we are in react the code here does it functionality in client side and access the server with the axios network request
+
+
 import React from "react";
 import Layout from "./../components/Layout";
 import { Col, Form, Input, Row, TimePicker, message } from "antd";
@@ -6,20 +9,28 @@ import { useNavigate } from "react-router-dom";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import axios from "axios";
 import moment from "moment";
-const ApplyDoctor = () => {
-  const { user } = useSelector((state) => state.user);
 
+
+
+
+const ApplyDoctor = () => {
+
+
+  const { user } = useSelector((state) => state.user);//egtting user from redux variable
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  //handle form
+
+
+  //handle form this provides the funcitonality when you submit to be a doctor
+
   const handleFinish = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post(
+      const res = await axios.post(//sending request to server
         "/api/v1/user/apply-doctor",
         {
-          ...values,
-          userId: user._id,
+          ...values,//all data
+          userId: user._id,//with user id
           timings: [
             moment(values.timings[0]).format("HH:mm"),
             moment(values.timings[1]).format("HH:mm"),
@@ -27,7 +38,7 @@ const ApplyDoctor = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`,//also sending the token
           },
         }
       );
@@ -41,12 +52,16 @@ const ApplyDoctor = () => {
     } catch (error) {
       dispatch(hideLoading());
       console.log(error);
-      message.error("Somthing Went Wrrong ");
+      message.error("Something Went Wrong");
     }
   };
+
+  //return after performing the above functionality 
+
+
   return (
     <Layout>
-      <h1 className="text-center layoutbg" >Apply Doctor</h1>
+      <h1 className="text-center layoutbg" >Apply To Be A Doctor</h1>
       <Form layout="vertical" onFinish={handleFinish} className="m-3 layoutbg">
         <h4 className="">Personal Details : </h4>
         <Row gutter={20}>
@@ -111,7 +126,7 @@ const ApplyDoctor = () => {
             </Form.Item>
           </Col>
         </Row>
-        <h4>Professional Details :</h4>
+        <h4>Professional Details:</h4>
         <Row gutter={20}>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
