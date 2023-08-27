@@ -5,7 +5,7 @@ import { Table } from "antd";
 const Users = () => {
   const [users, setUsers] = useState([]);
 
-  //getUsers
+  //Function to get all the users basically it send request to server and the response data is mapped with antd design
   const getUsers = async () => {
     try {
       const res = await axios.get("/api/v1/admin/getAllUsers", {
@@ -25,7 +25,7 @@ const Users = () => {
     getUsers();
   }, []);
 
-  // antD table col
+  // antd design list format to display all the users
   const columns = [
     {
       title: "Name",

@@ -37,8 +37,10 @@ const NotificationPage = () => {
       dispatch(hideLoading());
       if (res.data.success) {
         message.success(res.data.message);
+        window.location.reload();
       } else {
         message.error(res.data.message);
+        window.location.reload();
       }
     } catch (error) {//showing error
       dispatch(hideLoading());
@@ -62,8 +64,10 @@ const NotificationPage = () => {
       dispatch(hideLoading());
       if(res.data.success){
         message.success(res.data.message);
+        window.location.reload();
       }else{
         message.error(res.data.message);
+        window.location.reload();
       }
     } catch(error){
       console.log(error);

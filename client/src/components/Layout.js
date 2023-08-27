@@ -9,13 +9,17 @@ const Layout = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
   const navigate = useNavigate();
+
+
   // logout funtion
   const handleLogout = () => {
     localStorage.clear();
     message.success("Logout Successfully");
     navigate("/login");
   };
-//*************doctor menu */
+
+
+//*************doctor menu*************/
 const doctorMenu =[
   {
       name:"Home",
@@ -34,8 +38,10 @@ const doctorMenu =[
   },
   ];
   
-//*************doctor menu */
+//*************doctor menu************/
   // redering menu list
+
+  
   const SidebarMenu = user?.isAdmin 
   ? adminMenu 
   : user?.isDoctor
