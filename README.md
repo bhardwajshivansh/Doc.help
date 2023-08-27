@@ -21,6 +21,10 @@ With easy and user friendly user interface many operations can be done with slig
 ---Admin Controls----<br>
 ->Admin have rights to approve user request to become a doctor.<br>
 ->Admin can even block users and remove doctors<br>
+<br>
+<br>
+<br>
+
 ---Doctor Functionality----<br>
 ->Doctor have their dynamic profile page where they can update all the information about them which is used by user.<br>
 ->Doctor can check their appointment in application<br>
