@@ -41,7 +41,7 @@ const Login = () => {
     <div className="form-container">
 
     <Form layout="vertical" onFinish={onfinishHandler} className="register-form">
-    <h3 className='text-center'> Login Form</h3>
+    <h1>DOC.HELP</h1>
     <Link to="/register"  className="loginlink">
      NEW USER
      </Link>

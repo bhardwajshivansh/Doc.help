@@ -30,7 +30,6 @@ const Register = () => {
     <div className="form-container">
       <Form layout="vertical" onFinish={onfinishHandler} className="card">
         <h1 className="text-center">DOC.HELP</h1>
-        <h2 className="text-center">Register Form</h2>
         <Form.Item label="Name" name="name">
           <Input type="text" required />
         </Form.Item>
