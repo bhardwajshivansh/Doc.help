@@ -13,7 +13,7 @@ path:"/apply-doctor",
 icon:"fa-solid fa-user-doctor"},
 {
     name:"Profile",
-    path:"/profile",
+    path:"/profile/",
     icon:"fa-regular fa-user"
 },
 ];
@@ -37,7 +37,7 @@ export const adminMenu =[
     },
     {
         name:"Profile",
-        path:"/profile",
+        path:"/profile/",
         icon:"fa-regular fa-user"
     },
     ];

@@ -80,7 +80,7 @@ const Profile = () => {
   return (
     <Layout>
       <h1>Manage Profile</h1>
-      {doctor && (
+      {doctor?(
         <Form
           layout="vertical"
           onFinish={handleFinish}
@@ -90,7 +90,7 @@ const Profile = () => {
             timings: [
               moment(doctor.timings[0], "HH:mm"),
               moment(doctor.timings[1], "HH:mm"),
-            ],
+            ]
           }}
         >
           <h4 className="">Personal Details : </h4>
@@ -103,7 +103,7 @@ const Profile = () => {
                 required
                 rules={[{ required: true }]}
               >
-                <Input type="text" placeholder="your first name" />
+                <Input type="text" placeholder="First Name" />
               </Form.Item>
             </Col>
             <Col xs={24} md={24} lg={8}>
@@ -114,7 +114,7 @@ const Profile = () => {
                 required
                 rules={[{ required: true }]}
               >
-                <Input type="text" placeholder="your last name" />
+                <Input type="text" placeholder="Last Name" />
               </Form.Item>
             </Col>
             <Col xs={24} md={24} lg={8}>
@@ -125,7 +125,7 @@ const Profile = () => {
                 required
                 rules={[{ required: true }]}
               >
-                <Input type="text" placeholder="your contact no" />
+                <Input type="text" placeholder="Contact Number" />
               </Form.Item>
             </Col>
             <Col xs={24} md={24} lg={8}>
@@ -177,7 +177,7 @@ const Profile = () => {
                 required
                 rules={[{ required: true }]}
               >
-                <Input type="text" placeholder="your experience" />
+                <Input type="text" placeholder="Year Of Experience" />
               </Form.Item>
             </Col>
             <Col xs={24} md={24} lg={8}>
@@ -188,7 +188,7 @@ const Profile = () => {
                 required
                 rules={[{ required: true }]}
               >
-                <Input type="text" placeholder="your contact no" />
+                <Input type="text" placeholder="Your Contact Number" />
               </Form.Item>
             </Col>
           <Col xs={24} md={24} lg={8}>
@@ -204,7 +204,8 @@ const Profile = () => {
             </Col>
           </Row>
         </Form>
-      )}
+      ):
+      <h3 color="red">Profile will be activated for Doctors</h3>}
     </Layout>
   );
 };

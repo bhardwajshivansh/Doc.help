@@ -45,13 +45,13 @@ const updateProfileController = async (req, res) => {
   }
 };
 
-//get single docotor
+//Get single doctor details based on id for booking page
 const getDoctorByIdController = async (req, res) => {
   try {
     const doctor = await doctorModel.findOne({ _id: req.body.doctorId });
     res.status(200).send({
       success: true,
-      message: "Sigle Doc Info Fetched",
+      message: "Single Doctor Info Fetched",
       data: doctor,
     });
   } catch (error) {
@@ -59,7 +59,7 @@ const getDoctorByIdController = async (req, res) => {
     res.status(500).send({
       success: false,
       error,
-      message: "Erro in Single docot info",
+      message: "Error in Single Docotor Info",
     });
   }
 };

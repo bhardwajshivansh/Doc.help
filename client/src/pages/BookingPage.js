@@ -15,7 +15,10 @@ const BookingPage = () => {
   const [time, setTime] = useState();
   const [isAvailable, setIsAvailable] = useState(false);
   const dispatch = useDispatch();
-  // login user data
+
+
+
+  //getting doctor information 
   const getUserData = async () => {
     try {
       const res = await axios.post(
@@ -34,7 +37,10 @@ const BookingPage = () => {
       console.log(error);
     }
   };
-  // ============ handle availiblity
+
+
+
+  // Handle ACtivity 
   const handleAvailability = async () => {
     try {
       dispatch(showLoading());
@@ -60,7 +66,11 @@ const BookingPage = () => {
       console.log(error);
     }
   };
-  // =============== booking func
+
+
+
+
+  // Booking Function
   const handleBooking = async () => {
     try {
       setIsAvailable(true);

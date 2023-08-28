@@ -8,11 +8,13 @@ const DoctorList = ({ doctor }) => {
       <div
         className="card m-2"
         style={{ cursor: "pointer" }}
-        onClick={() => navigate("/doctor/book-appointment/$doctor._id")()}
+        onClick={async ()=>{
+          return navigate(`/doctor/book-appointment/${doctor._id}`);
+        }}
       >
         <div className="card-header">
-          Dr. {doctor.firstname}
-          {doctor.lastname}
+          Dr. {doctor.firstName}   
+          {doctor.lastName}
         </div>
         <div className="card-body">
           <p>

@@ -187,14 +187,14 @@ const deleteAllNotificationController = async (req, res) => {
 
 
 
-
-//GET ALL DOC
+//Get ALL DOCTORS
+//Sends the list of all doctor
 const getAllDocotrsController = async (req, res) => {
   try {
     const doctors = await doctorModel.find({ status: "approved" });
     res.status(200).send({
       success: true,
-      message: "Docots Lists Fetched Successfully",
+      message: "Doctors Lists Fetched Successfully",
       data: doctors,
     });
   } catch (error) {
