@@ -14,8 +14,6 @@ const Profile = () => {
   const navigate = useNavigate();
   const params = useParams();
 
-
-
   //***************************Updating the information*************************
 
   //handle form
@@ -48,7 +46,7 @@ const Profile = () => {
     } catch (error) {
       dispatch(hideLoading());
       console.log(error);
-      message.error("Somthing Went Wrrong ");
+      message.error("Somthing Went Wrong ");
     }
   };
   //*************************information updated*********************
@@ -80,7 +78,7 @@ const Profile = () => {
   return (
     <Layout>
       <h1>Manage Profile</h1>
-      {doctor?(
+      {doctor ? (
         <Form
           layout="vertical"
           onFinish={handleFinish}
@@ -90,7 +88,7 @@ const Profile = () => {
             timings: [
               moment(doctor.timings[0], "HH:mm"),
               moment(doctor.timings[1], "HH:mm"),
-            ]
+            ],
           }}
         >
           <h4 className="">Personal Details : </h4>
@@ -140,7 +138,11 @@ const Profile = () => {
               </Form.Item>
             </Col>
             <Col xs={24} md={24} lg={8}>
-              <Form.Item label="Website" name="website" className="layoutformitem">
+              <Form.Item
+                label="Website"
+                name="website"
+                className="layoutformitem"
+              >
                 <Input type="text" placeholder="your website" />
               </Form.Item>
             </Col>
@@ -191,11 +193,16 @@ const Profile = () => {
                 <Input type="text" placeholder="Your Contact Number" />
               </Form.Item>
             </Col>
-          <Col xs={24} md={24} lg={8}>
-              <Form.Item label="Timings" name="timings" required className="layoutformitem">
+            <Col xs={24} md={24} lg={8}>
+              <Form.Item
+                label="Timings"
+                name="timings"
+                required
+                className="layoutformitem"
+              >
                 <TimePicker.RangePicker format="HH:mm" />
               </Form.Item>
-        </Col>
+            </Col>
             <Col xs={24} md={24} lg={8}></Col>
             <Col xs={24} md={24} lg={8}>
               <button className="btn btn-primary form-btn" type="submit">
@@ -204,8 +211,9 @@ const Profile = () => {
             </Col>
           </Row>
         </Form>
-      ):
-      <h3 color="red">Profile will be activated for Doctors</h3>}
+      ) : (
+        <h3 color="red">Profile will be activated for Doctors</h3>
+      )}
     </Layout>
   );
 };

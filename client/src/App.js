@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//react-router-dom is used for making routes based design 
-
-
+//react-router-dom is used for making routes based design
 
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
@@ -27,7 +25,6 @@ function App() {
           <Spinner />
         ) : (
           <Routes>
-            
             <Route
               path="/apply-doctor"
               element={
@@ -105,6 +102,14 @@ function App() {
               element={
                 <ProtectedRoutes>
                   <HomePage />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/Profile"
+              element={
+                <ProtectedRoutes>
+                  <Profile />
                 </ProtectedRoutes>
               }
             />

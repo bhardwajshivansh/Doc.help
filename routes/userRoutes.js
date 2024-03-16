@@ -60,4 +60,6 @@ router.post(
 //Appointments List
 router.get("/user-appointments", authMiddleware, userAppointmentsController);
 
+
+
 module.exports = router;
