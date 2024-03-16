@@ -1,11 +1,11 @@
 const doctorModel = require("../models/doctorModel");
 const userModel = require("../models/userModels");
 
-//Funtion to get All the users
+//Function to get All the users
 const getAllUsersController = async (req, res) => {
   try {
     const users = await userModel.find({});
-    res.status(200).send({//but may be you have send all passwords too handle that
+    res.status(200).send({//but may be you  send all passwords too handle that
       success: true,
       message: "Users Data Lists",
       data: users,
@@ -79,7 +79,7 @@ const getDoctorByIdController = async (req, res) => {
     const doctor = await doctorModel.findOne({ _id: req.body.doctorId });
     res.status(200).send({
       success: true,
-      message: "Single Doc Info Fetched",
+      message: "Single Doctor Info Fetched",
       data: doctor,
     });
   } catch (error) {

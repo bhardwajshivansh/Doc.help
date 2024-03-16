@@ -1,5 +1,5 @@
 const mongoose= require('mongoose')
-const colors=require('colors')
+const colors=require('colors')//this is for color in terminal
 
 const connectDB = async( )  => {
     try{

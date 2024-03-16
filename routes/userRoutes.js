@@ -13,7 +13,7 @@ const {
 } = require("../controllers/userctrl");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-//router onject
+//router object
 const router = express.Router();
 
 //routes

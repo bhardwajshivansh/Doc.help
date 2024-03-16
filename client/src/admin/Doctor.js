@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./../components/Layout";
-import axios from "axios";
-import { Table, message } from "antd";
+import axios from "axios";//used to send and recieve data
+import { Table, message } from "antd";//this is library used for taking the ready made code 
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
