@@ -15,7 +15,7 @@ const Login = () => {
   const onfinishHandler = async (values) => {
   try{ 
     dispatch(showLoading());
-    const res = await axios.post('/api/v1/user/login',values);
+    const res = await axios.post('https://doc-help-rouge.vercel.app/user/login',values);
     window.location.reload();
 
 
