@@ -5,20 +5,24 @@ import { Form, Input, message } from "antd";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { showLoading,hideLoading} from "../redux/features/alertSlice";
+import { showLoading, hideLoading } from "../redux/features/alertSlice";
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // form handler
   const onfinishHandler = async (values) => {
-    try { dispatch(showLoading());
-      const res = await axios.post("/api/v1/user/register", values);
+    try {
+      dispatch(showLoading());
+      const res = await axios.post(
+        "https://doc-help-rouge.vercel.app/user/register",
+        values
+      );
       dispatch(hideLoading());
       if (res.data.success) {
         message.success("Registered Successfully!");
         navigate("/login");
       } else {
-       message.error(res.data.message);
+        message.error(res.data.message);
       }
     } catch (error) {
       dispatch(hideLoading());
@@ -39,7 +43,9 @@ const Register = () => {
         <Form.Item label="Password" name="password">
           <Input type="password" required />
         </Form.Item>
-        <Link to="/login" className="registerlink">ALREADY A USER</Link>
+        <Link to="/login" className="registerlink">
+          ALREADY A USER
+        </Link>
         <button className="btn btn-primary" type="submit">
           Register
         </button>
