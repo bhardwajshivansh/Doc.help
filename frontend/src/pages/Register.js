@@ -14,7 +14,7 @@ const Register = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "https://doc-help-rouge.vercel.app/user/register",
+        "/api/v1/user/user/register",
         values
       );
       dispatch(hideLoading());
