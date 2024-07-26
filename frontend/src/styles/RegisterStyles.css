@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+  
     background-color: rgb(40, 116, 182);
     font-family: 'Courier New', Courier, monospace;
     background-image: url(../images/doc_pulse.png);
@@ -24,8 +25,9 @@ h1{
     position: absolute;
     justify-content: center;
     background-color: rgb(223, 228, 232);
+    
     width: 300px;
-    height: 200px;
+    height: 50%;
 }
 .registerlink{
     position: relative;

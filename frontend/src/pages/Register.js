@@ -14,7 +14,7 @@ const Register = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/user/register",
+        "/api/v1/user/register",
         values
       );
       dispatch(hideLoading());
