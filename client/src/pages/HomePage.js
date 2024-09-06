@@ -35,7 +35,7 @@ const HomePage = () => {
   return (
     // eslint-disable-next-line
     <Layout>
-      <h1 className="text-center">Availibale Doctors</h1>
+      <h1 className="text-center">Currently available Doctors</h1>
     <Row>
       {doctors && doctors.map(doctor =>(
         <DoctorList doctor={doctor}/>

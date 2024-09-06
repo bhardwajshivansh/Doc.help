@@ -82,7 +82,7 @@ const NotificationPage = () => {
 
   return (
     <Layout>
-      <h4 className="p-3 text-center">Notification Page</h4>
+      <h4 className="p-3 text-center">Notifications</h4>
       <Tabs>
         <Tabs.TabPane tab="UNREAD" key={0}>
           <div className="d-flex justify-content-end">
